@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/fac26/week3-authentification-dgkg#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "better-sqlite3": "^8.0.1",
-    "express": "^4.18.2"
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
     "eslint": "^8.33.0",
