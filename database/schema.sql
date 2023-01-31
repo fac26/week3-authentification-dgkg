@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = ON;
+
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS users (
