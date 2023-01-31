@@ -1,25 +1,17 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const home = require('../routes/home');
+
 const server = express();
 
 const staticHandler = express.static('../public');
+const cookies = cookieParser(process.env.COOKIE_SECRET);
+const body = express.urlencoded({ extended: false });
+
 server.use(staticHandler);
-server.get('/', (request, response) => {
-    const html =
-        /*html*/
-        `
-        <!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8" />
-            <link rel="stylesheet" type="text/css" href="style.css" />
-            <title>Home</title>
-          </head>
-          <body>
-            <h1>Hello Express</h1>
-          </body>
-        </html>
-    `;
-    response.send(html);
-});
+server.use(cookies);
+server.use(body);
+
+server.get('/', home.get);
 
 module.exports = server;
