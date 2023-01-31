@@ -4,7 +4,7 @@ const home = require('../routes/home');
 
 const server = express();
 
-const staticHandler = express.static('../public');
+const staticHandler = express.static('public');
 const cookies = cookieParser(process.env.COOKIE_SECRET);
 const body = express.urlencoded({ extended: false });
 
