@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const home = require('../routes/home');
+const signUp = require('../routes/sign-up');
 
 const server = express();
 
@@ -13,5 +14,6 @@ server.use(cookies);
 server.use(body);
 
 server.get('/', home.get);
+server.get('/sign-up', signUp.get);
 
 module.exports = server;
