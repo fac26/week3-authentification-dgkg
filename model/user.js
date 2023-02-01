@@ -1,13 +1,13 @@
 const db = require('../database/db.js');
 
-const insert_user = db.prepare(/*sql/ `
+const insert_user = db.prepare(/*sql*/ `
   INSERT INTO users (username, hash)
   VALUES ($username, $hash)
   RETURNING id
 `);
 
 function createUser(username, hash) {
-  return insert_user.get({ username, hash });
+    return insert_user.get({ username, hash });
 }
 
 const select_user_by_username = db.prepare(/*sql*/ `
