@@ -17,5 +17,6 @@ server.use(body);
 server.get('/', home.get);
 server.get('/sign-up', signUp.get);
 server.get('/log-in', logIn.get);
+server.post('/log-in', logIn.post);
 
 module.exports = server;
