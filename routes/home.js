@@ -1,6 +1,9 @@
 const { layout, postForm } = require('../src/templates');
+const { getSession } = require('../model/session');
 
 function get(request, response) {
+    const sid = request.signedCookies.sid;
+    const session = getSession(sid);
     const title = 'Home | Bikes, bikes, bikes!';
     const content = /*html*/ `
     <main>
@@ -12,6 +15,11 @@ function get(request, response) {
         </p>
         ${postForm()}
         </div>
+        ${
+            session
+                ? /*html*/ `<form method="POST" action="/Log Out"><button class="Button">Log Out</button></form>`
+                : /*html*/ `<p></p>`
+        }
       </section>
     </main>
     `;
