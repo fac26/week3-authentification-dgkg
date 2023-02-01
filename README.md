@@ -2,14 +2,6 @@
 
 Deployed website: [here](week3-authentification-dgkg.fly.dev).
 
-### Contributors:
-
-[Gal](https://github.com/GalKJ), [Georgia](https://github.com/rockyrelay), [Karol](https://github.com/Kr33L), [Dominic](https://github.com/dominic_simpson) 
-
-### Repo Structure
-
-![image](https://user-images.githubusercontent.com/105356599/216096785-205d422e-c3b8-44da-aeeb-f73453bc186f.png)
-
 ### Criteria
 
 - [ ] As a user, I want to: submit information to your site for anyone to see
@@ -25,6 +17,14 @@ Deployed website: [here](week3-authentification-dgkg.fly.dev).
 - [ ] Tests for all routes
 - [ ] User page showing all posts from single user
 - [ ] Github action to run tests on push
+
+### Contributors:
+
+[Gal](https://github.com/GalKJ), [Georgia](https://github.com/rockyrelay), [Karol](https://github.com/Kr33L), [Dominic](https://github.com/dominic_simpson) 
+
+### Repo Structure
+
+![image](https://user-images.githubusercontent.com/105356599/216096785-205d422e-c3b8-44da-aeeb-f73453bc186f.png)
 
 ---
 
