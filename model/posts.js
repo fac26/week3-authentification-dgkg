@@ -5,7 +5,7 @@ const db = require('../database/db.js');
 const select_posts = db.prepare(/*sql*/ `
   SELECT content, created_at FROM posts
   WHERE user_id = ?
-  ΟRDER BY created_at DESC
+  ORDER BY created_at DESC
 `);
 
 // listing posts func - using above query
