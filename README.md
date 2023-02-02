@@ -1,6 +1,6 @@
 ## Authentification | Team 1
 
-Deployed website: [here](week3-authentification-dgkg.fly.dev).
+Deployed website: [here](https://week3-authentification-dgkg.fly.dev).
 
 ### Criteria
 
