@@ -1,5 +1,5 @@
 function layout({ title, content, stylesheet }) {
-    return /*html*/ `
+  return /*html*/ `
     <!doctype html>
     <html lang="en">
       <head>
@@ -18,7 +18,7 @@ function layout({ title, content, stylesheet }) {
 }
 
 function postForm() {
-    return /*html*/ `
+  return /*html*/ `
       <form method="POST">
           <div>
               <label for="title">Enter title</label>
@@ -34,7 +34,7 @@ function postForm() {
 }
 
 function signUpForm() {
-    return /*html*/ `
+  return /*html*/ `
     <form method="POST">
         <div>
             <label for="username">Enter username</label>
