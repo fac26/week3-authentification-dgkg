@@ -50,3 +50,4 @@ With above installed, follow the below to run test(s).
 
 1. Run `npm run test:1` to test
 > `Session can be created and inserted`
+

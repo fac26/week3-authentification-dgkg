@@ -22,11 +22,11 @@ function postForm() {
       <form method="POST">
           <div>
               <label for="title">Enter title</label>
-              <input type="text" name="title" id="title" value="" />
+              <input type="text" name="title" id="title" value="" required/>
           </div>
           <div>
               <label for="comment">Enter message</label>
-              <textarea type="text" name="comment" id="comment" value=""> </textarea>
+              <textarea type="text" name="comment" id="comment" value="" required> </textarea>
           </div>
           <button type="submit">Submit</button>
       </form>
@@ -38,11 +38,11 @@ function signUpForm() {
     <form method="POST">
         <div>
             <label for="username">Enter username</label>
-            <input type="text" name="username" id="username" value="" />
+            <input type="text" name="username" id="username" value="" required />
         </div>
         <div>
             <label for="password">Enter password</label>
-            <input type="text" name="password" id="password" value="" />
+            <input type="text" name="password" id="password" value="" required />
         </div>
         <button type="submit">Submit</button>
     </form>
