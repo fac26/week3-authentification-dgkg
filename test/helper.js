@@ -1,11 +1,10 @@
-const server = require('../src/server.js');
-const db = require('../database/db.js');
-const { createUser, getUserByUsername }
- = require('../model/user.js');
- const { getSession, createSession } = require('../model/session.js');
-const { displayPosts } = require('../model/posts.js');
+const server = require("../src/server.js");
+const db = require("../database/db.js");
+const { createUser, getUserByUsername } = require("../model/user");
+const { getSession, createSession } = require("../model/session");
+const { displayPosts } = require("../model/posts.js");
 
-async function request (pathname, options = {}) {
+async function request(pathname, options = {}) {
   const app = server.listen(0);
   const { port } = app.address();
   const url = new URL(pathname, `http://localhost:${port}`);
@@ -28,7 +27,16 @@ function reset() {
     DELETE FROM sessions;
     DELETE FROM users;
     DELETE FROM sqlite_sequence WHERE name IN ('posts', 'sessions', 'users');
-  `)
+  `);
 }
 
-module.exports = {}
+module.exports = {
+  reset,
+  get_sid,
+  request,
+  createUser,
+  getUserByUsername,
+  getSession,
+  createSession,
+  displayPosts,
+};
