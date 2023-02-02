@@ -2,10 +2,10 @@ const { layout, postForm } = require('../src/templates');
 const { getSession } = require('../model/session');
 
 function get(request, response) {
-    const title = 'Home | Bikes, bikes, bikes!';
-    const sid = request.signedCookies.sid;
-    const session = getSession(sid);
-    const content = /*html*/ `
+  const sid = request.signedCookies.sid;
+  const session = getSession(sid);
+  const title = 'Home | Bikes, bikes, bikes!';
+  const content = /*html*/ `
     <main>
       <section>
         <div>
