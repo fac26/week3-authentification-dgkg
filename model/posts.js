@@ -10,11 +10,10 @@ const select_posts = db.prepare(/*sql*/ `
 
 // listing posts func - using above query
 function displayPosts(user_id) {
-    return select_posts.all(user_id);
+  return select_posts.all(user_id);
 }
 
 //  inserting posts query
-
 const insert_post = db.prepare(/*sql*/ `
     INSERT INTO posts (content, user_id) 
     VALUES ($content, $user_id)
@@ -22,9 +21,8 @@ const insert_post = db.prepare(/*sql*/ `
 `);
 
 // create posts func
-
 function createPost(content, user_id) {
-    return insert_post.get({ content, user_id });
+  return insert_post.get({ content, user_id });
 }
 
 module.exports = { displayPosts, createPost };

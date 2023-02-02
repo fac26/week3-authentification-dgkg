@@ -1,5 +1,6 @@
 const { layout, postForm } = require('../src/templates');
 const { getSession } = require('../model/session');
+const { createPost } = require('../model/posts');
 
 function get(request, response) {
 	const sid = request.signedCookies.sid;
@@ -28,4 +29,12 @@ function get(request, response) {
 	response.send(layout({ title, content, stylesheet }));
 }
 
-module.exports = { get };
+function post(request, response) {
+	const sid = request.signedCookies.sid;
+	const session = getSession(sid);
+	const current_user = session && session.user_id;
+	createPost(request.body.comment, current_user);
+	response.redirect('/posts');
+}
+
+module.exports = { get, post };
