@@ -3,10 +3,10 @@ const { getSession } = require('../model/session');
 const { createPost } = require('../model/posts');
 
 function get(request, response) {
-  const sid = request.signedCookies.sid;
-  const session = getSession(sid);
-  const title = 'Home | Bikes, bikes, bikes!';
-  const content = /*html*/ `
+	const sid = request.signedCookies.sid;
+	const session = getSession(sid);
+	const title = 'Home | Bikes, bikes, bikes!';
+	const content = /*html*/ `
     <main>
       <section>
         <div>
@@ -17,27 +17,24 @@ function get(request, response) {
         ${postForm()}
         </div>
         ${
-          session
-            ? /*html*/ `<form method="POST" action="/Log Out"><button class="Button">Log Out</button></form>`
-            : /*html*/ `<p></p>`
-        }
+					session
+						? /*html*/ `<form method="POST" action="/log-out"><button class="Button">Log Out</button></form>`
+						: /*html*/ `<nav><a href="/sign-up">Sign up</a> or <a href="/log-in">log in</a></nav>`
+				}
       </section>
     </main>
     `;
-  const stylesheet = 'home.css';
+	const stylesheet = 'home.css';
 
-  response.send(layout({ title, content, stylesheet }));
+	response.send(layout({ title, content, stylesheet }));
 }
 
 function post(request, response) {
-  const sid = request.signedCookies.sid;
-  const session = getSession(sid);
-  const current_user = session && session.user_id;
-  // if (!request.body.content || !current_user) {
-  //   return response.status(401).send('<h1>Post Failed!</h1>');
-  // }
-  createPost(request.body.comment, current_user);
-  response.redirect('/posts');
+	const sid = request.signedCookies.sid;
+	const session = getSession(sid);
+	const current_user = session && session.user_id;
+	createPost(request.body.comment, current_user);
+	response.redirect('/posts');
 }
 
 module.exports = { get, post };
