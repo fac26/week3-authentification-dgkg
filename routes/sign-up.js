@@ -32,7 +32,6 @@ function post(request, response) {
         maxAge: 1000 * 60 * 60 * 24 * 7,
         sameSite: "lax",
       });
-      console.log("func reacheD?");
       response.redirect(`/`);
     });
   }
